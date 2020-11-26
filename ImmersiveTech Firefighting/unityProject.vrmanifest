@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.immersivetechfirefighting.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Repos\\Firefight Sim\\FirefightingSim_ImmersiveTech\\ImmersiveTech Firefighting\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "ImmersiveTech Firefighting [Testing]"
+        }
+      }
+    }
+  ]
+}
