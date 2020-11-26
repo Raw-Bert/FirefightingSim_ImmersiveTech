@@ -13,7 +13,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public float timer = 0.0f;
-    public int seconds;
+    public float seconds;
+    public float minutes;
+    public float hours;
 
     // Update is called once per frame
     void Update()
@@ -24,7 +26,23 @@ public class GameManager : MonoBehaviour
     public void CountSeconds()
     {
         timer += Time.deltaTime;
+        
+
+
+        if(timer > 60)
+        {
+            minutes += 1;
+            timer = 0;
+        }
+        if(minutes > 60)
+        {
+            hours += 1;
+            minutes = 0;
+        }
         seconds = (int)(timer % 60);
-        Debug.Log(seconds);
+        minutes = (int)(minutes % 60);
+        hours = (int)(hours % 60);
+        
+        Debug.Log(hours + " : " + minutes + " : " + seconds);
     }
 }
