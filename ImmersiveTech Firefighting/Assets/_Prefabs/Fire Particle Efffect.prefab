@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3039705573134596498}
   - component: {fileID: 3039705573134596499}
   - component: {fileID: 934034197494481785}
+  - component: {fileID: 3370929011978001389}
   m_Layer: 0
   m_Name: Fire Particle Efffect
   m_TagString: Untagged
@@ -42,7 +43,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3039705573134596205}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
@@ -143,6 +144,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3370929011978001389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039705573134596205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820ae47a6b60e2f4daf5fce2c5b7f5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterDroplets: 100
+  fireParticles: {fileID: 3039705574094080321}
+  smokeParticles: {fileID: 3039705573835359243}
 --- !u!1 &3039705573835359236
 GameObject:
   m_ObjectHideFlags: 0
