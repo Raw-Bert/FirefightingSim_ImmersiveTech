@@ -9,6 +9,7 @@ using TMPro;
 //Game win when put out all fire
 //Time at end of game.
 //make water sound start/stop
+//Blinking lights on firetruck + siren sound
 
 public class GameManager : MonoBehaviour
 {
