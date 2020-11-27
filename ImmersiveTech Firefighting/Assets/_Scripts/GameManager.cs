@@ -8,6 +8,7 @@ using TMPro;
 //Menu, with buttons
 //Game win when put out all fire
 //Time at end of game.
+//make water sound start/stop
 
 public class GameManager : MonoBehaviour
 {

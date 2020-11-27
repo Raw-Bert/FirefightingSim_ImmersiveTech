@@ -159,6 +159,8 @@ MonoBehaviour:
   waterDroplets: 100
   fireParticles: {fileID: 3039705574094080321}
   smokeParticles: {fileID: 3039705573835359243}
+  emissionValue: 4
+  smokEmissionValue: 10
 --- !u!1 &3039705573835359236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,7 +8677,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
+    enabled: 1
     ratio: 0
     light: {fileID: 0}
     randomDistribution: 1
