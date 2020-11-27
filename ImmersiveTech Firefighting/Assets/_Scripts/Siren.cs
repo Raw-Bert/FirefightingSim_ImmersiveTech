@@ -29,6 +29,9 @@ public class Siren : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().endGame == true)
         {
             //Audio off here
+            sirenAudio.Stop();
+            lightRed.SetActive(false);
+            lightBlue.SetActive(false);
             //both lights off
         }
     }
