@@ -21,11 +21,20 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI timeTxt;
 
+    public GameObject nozzle;
+
+    public Vector3 nozzlePos = new Vector3(0,2,0);
     // Update is called once per frame
     void Update()
     {
         CountSeconds();
         CheckWin();
+        
+        float pos = nozzle.transform.position.y;
+        if(pos > 100 || pos < -10)
+        {
+            nozzle.transform.position = nozzlePos;
+        }
     }
     
     public void CountSeconds()
