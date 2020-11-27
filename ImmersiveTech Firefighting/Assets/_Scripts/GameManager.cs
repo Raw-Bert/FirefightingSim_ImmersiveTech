@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
-//Menu, with buttons
-//Game win when put out all fire
-//Time at end of game.
-//make water sound start/stop
-//Blinking lights on firetruck + siren sound
+//button on firetruck to return to menu.
+//siren sound
 
 public class GameManager : MonoBehaviour
 {
@@ -21,15 +17,30 @@ public class GameManager : MonoBehaviour
     public List<GameObject> allFires = new List<GameObject>();
 
     public TextMeshProUGUI timeTxt;
+    public TextMeshProUGUI finalTxt;
 
     public GameObject nozzle;
 
     public Vector3 nozzlePos = new Vector3(0,2,0);
+
+    public bool endGame = false;
+
+    void Start(){
+        finalTxt.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
-        CountSeconds();
-        CheckWin();
+        if (!endGame)
+        {
+            CountSeconds();
+            CheckWin();
+        }
+        if(endGame == true)
+        {   
+            finalTxt.gameObject.SetActive(true);
+            Winner();
+        }
         
         float pos = nozzle.transform.position.y;
         if(pos > 100 || pos < -10)
@@ -61,6 +72,22 @@ public class GameManager : MonoBehaviour
 
     public void CheckWin()
     {
+        for (int i = 0; i < allFires.Count; i++)
+        {
+            if (allFires[i] == null)
+            {
+                if (i == (allFires.Count -1))
+                {
+                    timer = 0;
+                    endGame = true;
+                }
+            }
+            else if (allFires[i] != null)
+            {
+                break;
+            }
+        }
+
         if(allFires.Count == 0)
         {
             Debug.Log("Win");
@@ -68,6 +95,26 @@ public class GameManager : MonoBehaviour
         if(allFires.Count == 4)
         {
             Debug.Log("notWin");
+        }
+    }
+
+    public void Winner()
+    {
+        TimerFlash();
+    }
+
+    public void TimerFlash()
+    {
+        //exit();
+        timer = timer + Time.deltaTime;
+        if(timer >= 0.5)
+        {
+            timeTxt.gameObject.SetActive(false);// = true;
+        }
+        if(timer >= 1)
+        {
+            timeTxt.gameObject.SetActive(true);
+            timer = 0;
         }
     }
 }

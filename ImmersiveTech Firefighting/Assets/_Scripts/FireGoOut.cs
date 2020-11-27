@@ -10,7 +10,7 @@ public class FireGoOut : MonoBehaviour
 
     public float emissionValue = 4.0f;
     public float smokEmissionValue = 10.0f;
-    //public int rateOverTime;
+    public bool isOut;
 
     // Update is called once per frame
     void Update()
@@ -18,16 +18,6 @@ public class FireGoOut : MonoBehaviour
         
     }
 
-    //void OnCollisionEnter(Collision other)
-    //{
-        //Debug.Log("Not Yet");
-        //if(other.gameObject.tag == "Water")
-        //{
-            //waterDroplets -= 1;
-            //Debug.Log(waterDroplets);
-            //checkFireOut();
-        //}
-    //}
     void OnParticleCollision(GameObject other) 
     {
         if(other.tag == "Water")
