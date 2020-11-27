@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonTrigger : MonoBehaviour
 {
     public string sceneName;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class ButtonTrigger : MonoBehaviour
     {
         if (other.tag == "ButtonTop")
         {
+            Destroy(player.gameObject);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
     }
