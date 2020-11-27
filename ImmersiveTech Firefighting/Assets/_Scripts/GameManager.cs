@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 //Menu, with buttons
-//Timer
-//Water particle put out fire, also shoots when player pcisk up hose nozzle
-//Game win when put out all fire, time shown?
-
+//Game win when put out all fire
+//Time at end of game.
 
 public class GameManager : MonoBehaviour
 {
@@ -17,18 +16,21 @@ public class GameManager : MonoBehaviour
     public float minutes;
     public float hours;
 
+    public List<GameObject> allFires = new List<GameObject>();
+
+    public TextMeshProUGUI timeTxt;
+
     // Update is called once per frame
     void Update()
     {
         CountSeconds();
+        CheckWin();
     }
     
     public void CountSeconds()
     {
         timer += Time.deltaTime;
         
-
-
         if(timer > 60)
         {
             minutes += 1;
@@ -43,6 +45,18 @@ public class GameManager : MonoBehaviour
         minutes = (int)(minutes % 60);
         hours = (int)(hours % 60);
         
-        Debug.Log(hours + " : " + minutes + " : " + seconds);
+        timeTxt.text = (hours + " : " + minutes + " : " + seconds);
+    }
+
+    public void CheckWin()
+    {
+        if(allFires.Count == 0)
+        {
+            Debug.Log("Win");
+        }
+        if(allFires.Count == 4)
+        {
+            Debug.Log("notWin");
+        }
     }
 }
