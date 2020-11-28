@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using TMPro;
 
 //button on firetruck to return to menu.
-//siren sound
 
 public class GameManager : MonoBehaviour
 {
