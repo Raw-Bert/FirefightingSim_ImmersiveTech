@@ -15,30 +15,41 @@ public class WaterShoot : MonoBehaviour
         water.Stop();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Hand")
-        {
-            waterAudio.Play();
-        }
-    }
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Hand")
-        {
-            Debug.Log("Hand");
-            water.Play();
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Hand")
+    //    {
+    //        waterAudio.Play();
+    //    }
+    //}
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Hand")
+    //    {
+    //        Debug.Log("Hand");
+    //        water.Play();
+//
+    //    }
+    //}
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Hand")
+    //    {
+    //        Debug.Log("No Hand");
+     //       waterAudio.Stop();
+     //       water.Stop();
 
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Hand")
-        {
-            Debug.Log("No Hand");
-            waterAudio.Stop();
-            water.Stop();
+     //   }
+    //}
 
-        }
+    public void Shoot()
+    {
+        waterAudio.Play();
+        water.Play();
+    }
+    public void stopShoot()
+    {
+        waterAudio.Stop();
+        water.Stop();
     }
 }
