@@ -12,8 +12,10 @@ public class ButtonTrigger : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("WTFLESS");
         if (other.tag == "ButtonTop")
         {
+            Debug.Log("WTF");
             click.Play();
             Destroy(tele.gameObject);
             Destroy(player.gameObject);
