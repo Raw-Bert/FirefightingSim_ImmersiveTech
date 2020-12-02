@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//button on firetruck to return to menu.
+//Fix button sound Effect,
+//Working door
+//when certain door opened explosion happens
+//thick smoke inside
+//explosion particle effect
+//Person or dummy able to be picked up
+//Add new house with interior, replace one of other housees with yellow house
 
 public class GameManager : MonoBehaviour
 {
