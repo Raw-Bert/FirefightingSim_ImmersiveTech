@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//Fix button sound Effect,
-//Working door
-//when certain door opened explosion happens
+//when certain door opened explosion happens and explosion sound plays
 //thick smoke inside
 //explosion particle effect
 //Person or dummy able to be picked up
-//Add new house with interior, replace one of other housees with yellow house
+//Add new house with interior
+//game ends when fire out AND person rescued
 
 public class GameManager : MonoBehaviour
 {
