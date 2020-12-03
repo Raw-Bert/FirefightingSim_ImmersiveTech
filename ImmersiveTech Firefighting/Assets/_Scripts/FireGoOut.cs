@@ -24,9 +24,6 @@ public class FireGoOut : MonoBehaviour
         {
             checkFireOut();
             waterDroplets -= 1;
-            //checkFireOut();
-            Debug.Log(waterDroplets);
-            
         }
     }
 
@@ -35,7 +32,6 @@ public class FireGoOut : MonoBehaviour
         
         if(waterDroplets <= 0)
         {
-            Debug.Log("Gets here");
             Destroy(this.gameObject);
         }
         else if (waterDroplets <= 150)

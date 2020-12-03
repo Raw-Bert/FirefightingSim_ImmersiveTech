@@ -8,6 +8,9 @@ TagManager:
   - Hand
   - ButtonTop
   - QuitButtonTop
+  - Door
+  - Extraction
+  - Dummy
   layers:
   - Default
   - TransparentFX

@@ -4,13 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//when certain door opened explosion happens and explosion sound plays
-//thick smoke inside
-//explosion particle effect
-//Person or dummy able to be picked up
-//Add new house with interior
-//game ends when fire out AND person rescued
-
 public class GameManager : MonoBehaviour
 {
     public float timer = 0.0f;
@@ -28,6 +21,9 @@ public class GameManager : MonoBehaviour
     public Vector3 nozzlePos = new Vector3(0,2,0);
 
     public bool endGame = false;
+
+    public GameObject extraction;
+    public GameObject iintSmoke;
 
     void Start(){
         finalTxt.gameObject.SetActive(false);
@@ -82,8 +78,13 @@ public class GameManager : MonoBehaviour
             {
                 if (i == (allFires.Count -1))
                 {
-                    timer = 0;
-                    endGame = true;
+                    if(extraction.GetComponent<Extract>().extrct == true)
+                    {
+                        timer = 0;
+                        endGame = true;
+                        iintSmoke.SetActive(false);
+                    }
+
                 }
             }
             else if (allFires[i] != null)
@@ -121,4 +122,5 @@ public class GameManager : MonoBehaviour
             timer = 0;
         }
     }
+
 }
